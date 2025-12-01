@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tatva Luxe - Where Premium Luxury Meets Timeless Elegance. Discover our curated collection of exceptional products.">
-    <title>Tatva Luxe | Premium Luxury Redefined</title>
+    <meta name="description" content="TATVA LUXE - Premium handcrafted copper water bottles. Ancient Ayurvedic wisdom meets contemporary luxury. Experience wellness through copper.">
+    <title>TATVA LUXE | Hydration Redefined</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,12 +16,13 @@
         }
 
         :root {
+            --copper: #B87333;
+            --dark-copper: #8B5A2B;
             --gold: #D4AF37;
-            --dark-gold: #B8941F;
-            --black: #0A0A0A;
-            --off-white: #F8F6F3;
+            --cream: #FFF8F0;
+            --dark: #1A1A1A;
             --gray: #6B6B6B;
-            --light-gray: #E5E5E5;
+            --light-gray: #F5F5F5;
         }
 
         html {
@@ -29,27 +30,27 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--off-white);
-            color: var(--black);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
             line-height: 1.6;
         }
 
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(255, 248, 240, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
+            border-bottom: 1px solid rgba(184, 115, 51, 0.1);
             transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 1rem 5%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .nav-container {
@@ -61,60 +62,47 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
+            color: var(--copper);
+            letter-spacing: 3px;
             text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            color: var(--off-white);
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--off-white);
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--copper);
         }
 
+        .cart-icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 100%);
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF5E6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -122,28 +110,443 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(184, 115, 51, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        .hero-content {
-            text-align: center;
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
             z-index: 2;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
         }
 
+        .hero-content h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.3rem;
+            color: var(--copper);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--copper);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--copper);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-copper);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(184, 115, 51, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--copper);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--copper);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--copper);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottle-showcase {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(184, 115, 51, 0.1), rgba(212, 175, 55, 0.1));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 0 20px 60px rgba(184, 115, 51, 0.2);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 5%;
+            background: var(--light-gray);
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(184, 115, 51, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #FFF8F0, #FFE4CC);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--copper);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: var(--copper);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--copper);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background: var(--dark-copper);
+            transform: scale(1.02);
+        }
+
+        /* Ayurvedic Section */
+        .ayurvedic {
+            padding: 6rem 5%;
+            background: var(--dark);
+            color: white;
+        }
+
+        .ayurvedic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ayurvedic-content h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .ayurvedic-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .ayurvedic-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .ayurvedic-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ayurvedic-list li::before {
+            content: '✓';
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .ayurvedic-visual {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(184, 115, 51, 0.1));
+            border-radius: 20px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--copper);
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--copper);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container,
+            .ayurvedic-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -155,556 +558,261 @@
             }
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 900;
-            color: var(--off-white);
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            line-height: 1.1;
-        }
-
-        .hero .gold-text {
-            color: var(--gold);
-            display: block;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; text-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            color: var(--light-gray);
-            margin-bottom: 3rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 2px;
-            border-radius: 50px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: var(--off-white);
-            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
-
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .cta-button span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-        }
-
-        .features {
-            padding: 8rem 5%;
-            background: var(--off-white);
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--black);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.2rem;
-            margin-bottom: 5rem;
-            font-weight: 300;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .collection {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--off-white);
-        }
-
-        .collection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .collection-item {
-            position: relative;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-        }
-
-        .collection-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.9) 100%);
-            z-index: 1;
-            transition: all 0.4s ease;
-        }
-
-        .collection-item:hover::before {
-            background: linear-gradient(to bottom, transparent 0%, rgba(212,175,55,0.3) 100%);
-        }
-
-        .collection-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            z-index: 2;
-            transform: translateY(0);
-            transition: all 0.4s ease;
-        }
-
-        .collection-item:hover .collection-content {
-            transform: translateY(-10px);
-        }
-
-        .collection-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--gold);
-        }
-
-        .collection-content p {
-            color: var(--light-gray);
-            font-size: 1rem;
-        }
-
-        .testimonials {
-            padding: 8rem 5%;
-            background: var(--off-white);
-        }
-
-        .testimonial-slider {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .testimonial {
-            padding: 3rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-
-        .testimonial-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--black);
-            font-size: 1.1rem;
-        }
-
-        .testimonial-role {
-            color: var(--gold);
-            font-size: 0.95rem;
-        }
-
-        .contact {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
-            color: var(--off-white);
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            text-align: center;
-        }
-
-        .contact-item h4 {
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-item p {
-            color: var(--light-gray);
-        }
-
-        .contact-item a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--gold);
-        }
-
-        footer {
-            background: var(--black);
-            color: var(--gray);
-            text-align: center;
-            padding: 3rem 5%;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            color: var(--gray);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .scroll-indicator::before {
-            content: '↓';
-            font-size: 2rem;
-            color: var(--gold);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--gold);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .features-grid,
-            .collection-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        body {
-            animation: fadeIn 0.5s ease-in;
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
             <a href="#" class="logo">TATVA LUXE</a>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
-                <li><a href="#features">FEATURES</a></li>
-                <li><a href="#collection">COLLECTION</a></li>
-                <li><a href="#testimonials">TESTIMONIALS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#products">SHOP</a></li>
+                <li><a href="#benefits">BENEFITS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><span class="cart-icon">🛒</span></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>
-                PREMIUM LUXURY
-                <span class="gold-text">REDEFINED</span>
-            </h1>
-            <p>WHERE ELEGANCE MEETS EXCELLENCE</p>
-            <a href="#collection" class="cta-button"><span>EXPLORE COLLECTION</span></a>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
-
-    <section class="features" id="features">
-        <h2 class="section-title">Why Choose Tatva Luxe</h2>
-        <p class="section-subtitle">Experience luxury like never before</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Premium Quality</h3>
-                <p>Every product is meticulously crafted with the finest materials, ensuring unparalleled quality and durability that stands the test of time.</p>
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <p class="tagline">HYDRATION REDEFINED</p>
+                <h1>Where Ancient Wisdom Meets Modern Luxury</h1>
+                <p>Experience the pinnacle of handcrafted copper artistry. Our premium bottles blend 5000-year-old Ayurvedic tradition with contemporary design for ultimate wellness.</p>
+                <div class="cta-buttons">
+                    <a href="#products" class="btn-primary">SHOP COLLECTION</a>
+                    <a href="#benefits" class="btn-secondary">LEARN MORE</a>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Exclusive Design</h3>
-                <p>Our curated collection features unique, sophisticated designs that embody timeless elegance and contemporary style.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌟</div>
-                <h3>Exceptional Service</h3>
-                <p>Experience white-glove service with personalized attention, ensuring your journey with us is as luxurious as our products.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Authenticity Guaranteed</h3>
-                <p>Every piece comes with a certificate of authenticity, backed by our commitment to genuine luxury and excellence.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚚</div>
-                <h3>Global Delivery</h3>
-                <p>Secure, insured worldwide shipping ensures your luxury items arrive safely, wherever you are in the world.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <h3>Lifetime Value</h3>
-                <p>Invest in pieces that appreciate over time, combining aesthetic beauty with enduring value and craftsmanship.</p>
+            <div class="hero-image">
+                <div class="bottle-showcase">🏺</div>
             </div>
         </div>
     </section>
 
-    <section class="collection" id="collection">
-        <h2 class="section-title" style="color: var(--off-white);">Our Collections</h2>
-        <p class="section-subtitle" style="color: var(--light-gray);">Discover timeless elegance</p>
-        <div class="collection-grid">
-            <div class="collection-item">
-                <div class="collection-content">
-                    <h3>Signature Series</h3>
-                    <p>Iconic pieces that define luxury</p>
+    <section class="benefits" id="benefits">
+        <div class="section-header">
+            <h2>The Copper Advantage</h2>
+            <p>Scientifically proven health benefits backed by ancient Ayurvedic wisdom</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">💧</span>
+                <h3>Natural Purification</h3>
+                <p>Copper's antimicrobial properties naturally purify water, eliminating harmful bacteria and pathogens.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">✨</span>
+                <h3>Anti-Aging Properties</h3>
+                <p>Rich in antioxidants, copper helps fight free radicals and promotes youthful, radiant skin.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🧠</span>
+                <h3>Brain Function</h3>
+                <p>Supports cognitive health and helps maintain optimal brain function and neural pathways.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">💪</span>
+                <h3>Boosts Immunity</h3>
+                <p>Strengthens your immune system naturally, helping your body fight infections more effectively.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">❤️</span>
+                <h3>Heart Health</h3>
+                <p>Regulates blood pressure and cholesterol levels, promoting cardiovascular wellness.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🌿</span>
+                <h3>Digestive Wellness</h3>
+                <p>Aids digestion, reduces inflammation, and promotes a healthy gut microbiome.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="section-header">
+            <h2>Our Premium Collection</h2>
+            <p>Handcrafted copper bottles designed for the modern wellness enthusiast</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">BESTSELLER</span>
+                    🏺
+                </div>
+                <div class="product-info">
+                    <h3>Royalty Copper Bottle</h3>
+                    <p class="product-price">£19.99</p>
+                    <p class="product-description">Premium hammered finish with leak-proof cap. 1L capacity. Perfect for daily hydration.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
-            <div class="collection-item">
-                <div class="collection-content">
-                    <h3>Heritage Collection</h3>
-                    <p>Timeless classics reimagined</p>
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #FFE4E4, #FFC0CB);">
+                    🏺
+                </div>
+                <div class="product-info">
+                    <h3>Pink Copper Bottle</h3>
+                    <p class="product-price">£19.99</p>
+                    <p class="product-description">Elegant rose gold finish. Stylish and functional. 950ml capacity.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
-            <div class="collection-item">
-                <div class="collection-content">
-                    <h3>Limited Edition</h3>
-                    <p>Exclusive, rare masterpieces</p>
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #F5F5F5, #E0E0E0);">
+                    🏺
+                </div>
+                <div class="product-info">
+                    <h3>White Copper Bottle</h3>
+                    <p class="product-price">£19.99</p>
+                    <p class="product-description">Minimalist matte white finish. Modern elegance. 1L capacity.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #2C2C2C, #1A1A1A);">
+                    <span class="product-badge">NEW</span>
+                    🏺
+                </div>
+                <div class="product-info">
+                    <h3>Black Copper Bottle</h3>
+                    <p class="product-price">£19.99</p>
+                    <p class="product-description">Sleek matte black finish. Bold and sophisticated. 1L capacity.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #E6F3FF, #B3D9FF);">
+                    🏺
+                </div>
+                <div class="product-info">
+                    <h3>Blue Copper Sipper</h3>
+                    <p class="product-price">£19.99</p>
+                    <p class="product-description">Convenient sipper design. Perfect for on-the-go. 750ml capacity.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">BUNDLE</span>
+                    🏺🏺
+                </div>
+                <div class="product-info">
+                    <h3>Wellness Bottles Set of 2</h3>
+                    <p class="product-price">£35.99</p>
+                    <p class="product-description">Perfect couple set. Save £4. Two premium bottles for shared wellness.</p>
+                    <button class="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <p class="section-subtitle">Trusted by luxury connoisseurs worldwide</p>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p class="testimonial-text">"Tatva Luxe has completely transformed my perception of luxury. The attention to detail and quality is simply unmatched. Every piece tells a story of excellence."</p>
-                <p class="testimonial-author">Sophia Anderson</p>
-                <p class="testimonial-role">Luxury Lifestyle Curator</p>
+    <section class="ayurvedic" id="about">
+        <div class="ayurvedic-container">
+            <div class="ayurvedic-content">
+                <h2>Ancient Ayurvedic Tradition</h2>
+                <p>For over 5,000 years, Ayurveda has recognized copper as a vital element for health and wellness. Our bottles honor this ancient wisdom while meeting modern quality standards.</p>
+                <ul class="ayurvedic-list">
+                    <li>100% Pure Copper Construction</li>
+                    <li>Handcrafted by Skilled Artisans</li>
+                    <li>Food-Grade Safe Materials</li>
+                    <li>Leak-Proof Design</li>
+                    <li>Easy to Clean & Maintain</li>
+                    <li>Sustainable & Eco-Friendly</li>
+                </ul>
+                <a href="#products" class="btn-primary">EXPLORE COLLECTION</a>
+            </div>
+            <div class="ayurvedic-visual">
+                ☯️
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title" style="color: var(--off-white);">Get In Touch</h2>
-            <p class="section-subtitle" style="color: var(--light-gray);">Let's create something extraordinary together</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>Email</h4>
-                    <p><a href="mailto:hello@tatvaluxe.com">hello@tatvaluxe.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>Phone</h4>
-                    <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>Location</h4>
-                    <p>Global Luxury Hub</p>
-                </div>
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Join thousands of satisfied customers on their wellness journey</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I've been using my Tatva Luxe bottle for 3 months and I can genuinely feel the difference. My skin is clearer and I feel more energized throughout the day."</p>
+                <p class="testimonial-author">Sarah Mitchell</p>
+                <p class="testimonial-role">Wellness Coach, London</p>
             </div>
-            <a href="mailto:hello@tatvaluxe.com" class="cta-button" style="margin-top: 3rem;"><span>START YOUR JOURNEY</span></a>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The quality is exceptional. Beautiful craftsmanship and the health benefits are real. I've bought three more as gifts for family members."</p>
+                <p class="testimonial-author">Raj Patel</p>
+                <p class="testimonial-role">Yoga Instructor, Manchester</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Best investment in my health. The water tastes amazing and I love knowing I'm following ancient Ayurvedic principles. Highly recommend!"</p>
+                <p class="testimonial-author">Emma Thompson</p>
+                <p class="testimonial-role">Nutritionist, Birmingham</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="social-links">
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Twitter">🐦</a>
-            <a href="#" aria-label="LinkedIn">💼</a>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>TATVA LUXE</h4>
+                <p>Premium handcrafted copper bottles for modern wellness enthusiasts.</p>
+                <div class="social-links">
+                    <a href="http://instagram.com/tatvaluxe">📷</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>SHOP</h4>
+                <ul>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Bundle Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Care Instructions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Retailers</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                </ul>
+            </div>
         </div>
-        <p>&copy; 2025 Tatva Luxe. All Rights Reserved. | Crafted with Excellence</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TATVA LUXE. All Rights Reserved. | Crafted with Excellence</p>
+        </div>
     </footer>
 
     <script>
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -712,13 +820,25 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-card, .collection-item, .testimonial').forEach(el => {
+        document.querySelectorAll('.benefit-card, .product-card, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                this.textContent = 'ADDED ✓';
+                this.style.background = '#2ecc71';
+                setTimeout(() => {
+                    this.textContent = 'ADD TO CART';
+                    this.style.background = '';
+                }, 2000);
+            });
         });
     </script>
 </body>
